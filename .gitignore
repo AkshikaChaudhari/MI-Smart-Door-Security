@@ -1,0 +1,12 @@
+node_modules/
+*.out
+~$*.docx
+
+FlowChart.png
+flowchart2.png
+flowchart3.png
+
+Frontend/server.js
+MI_Report_24BCE286_24BCE290.docx
+SecureLock_Project_Complete_Explanation.docx
+Untitled-2026-03-19-1129.excalidraw

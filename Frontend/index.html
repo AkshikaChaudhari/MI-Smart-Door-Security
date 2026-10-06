@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Door Security System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>SecureLock</h2>
+                    <span>RTL Security System</span>
+                </div>
+            </div>
+
+            <nav>
+                <button class="nav-item active" data-section="dashboard">
+                    Dashboard
+                </button>
+
+                <button class="nav-item" data-section="authentication">
+                    Authentication
+                </button>
+
+                <button class="nav-item" data-section="securityLogs">
+                    Security Logs
+                </button>
+            </nav>
+
+            <div class="system-info">
+                <span class="status-dot"></span>
+                System Online
+                <small>SystemVerilog Core</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">SECURITY CONTROL</p>
+                    <h1>Smart Door Security</h1>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    Simulation Active
+                </div>
+            </header>
+
+
+            <!-- Door status -->
+            <section class="hero-card">
+
+                <div class="hero-content">
+
+                    <div class="lock-icon" id="lockIcon">🔒</div>
+
+                    <div>
+                        <p class="label">DOOR STATUS</p>
+                        <h2 id="doorStatus">LOCKED</h2>
+                        <p id="doorMessage">
+                            Authentication required to access the door.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="hero-actions">
+                    <button id="unlockBtn" class="primary-btn">
+                        Unlock Door
+                    </button>
+
+                    <button id="lockBtn" class="secondary-btn">
+                        Lock Door
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Authentication</span>
+                    <strong id="authStatus">WAITING</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Attempts</span>
+                    <strong id="attempts">0 / 3</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>RFID</span>
+                    <strong id="rfidStatus">NOT VERIFIED</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Alarm</span>
+                    <strong id="alarmStatus">OFF</strong>
+                </div>
+
+            </section>
+
+
+            <!-- Authentication -->
+            <section class="content-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <p class="eyebrow">AUTHENTICATION</p>
+                            <h3>Enter PIN</h3>
+                        </div>
+
+                        <span id="pinDisplay">••••</span>
+                    </div>
+
+
+                    <div class="keypad">
+
+                        <button data-key="1">1</button>
+                        <button data-key="2">2</button>
+                        <button data-key="3">3</button>
+                        <button data-key="A">A</button>
+
+                        <button data-key="4">4</button>
+                        <button data-key="5">5</button>
+                        <button data-key="6">6</button>
+                        <button data-key="B">B</button>
+
+                        <button data-key="7">7</button>
+                        <button data-key="8">8</button>
+                        <button data-key="9">9</button>
+                        <button data-key="C">C</button>
+
+                        <button data-key="E">E</button>
+                        <button data-key="0">0</button>
+                        <button data-key="F">F</button>
+                        <button data-key="D">D</button>
+
+                    </div>
+
+                    <div class="keypad-actions">
+                        <button id="clearBtn" class="secondary-btn">
+                            Clear
+                        </button>
+
+                        <button id="submitBtn" class="primary-btn">
+                            Authenticate
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Security panel -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <p class="eyebrow">SECURITY</p>
+                            <h3>System Status</h3>
+                        </div>
+                    </div>
+
+                    <div class="security-list">
+
+                        <div class="security-row">
+                            <span>PIN Authentication</span>
+                            <b id="pinAuth">Pending</b>
+                        </div>
+
+                        <div class="security-row">
+                            <span>RFID Authentication</span>
+                            <b id="rfidAuth">Pending</b>
+                        </div>
+
+                        <div class="security-row">
+                            <span>Door Sensor</span>
+                            <b id="sensorStatus">CLOSED</b>
+                        </div>
+
+                        <div class="security-row">
+                            <span>Lockout</span>
+                            <b id="lockoutStatus">INACTIVE</b>
+                        </div>
+
+                        <div class="security-row">
+                            <span>Emergency Override</span>
+                            <b id="emergencyStatus">READY</b>
+                        </div>
+
+                    </div>
+
+                    <button id="emergencyBtn" class="danger-btn">
+                        Emergency Override
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- Event log -->
+
+            <section class="panel log-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="eyebrow">EVENT MONITOR</p>
+                        <h3>Security Log</h3>
+                    </div>
+
+                    <button id="clearLog" class="text-btn">
+                        Clear Log
+                    </button>
+
+                </div>
+
+                <div id="eventLog" class="event-log">
+
+                    <div class="log-entry">
+                        <span class="log-time">SYSTEM</span>
+                        <span>Security system initialized.</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
